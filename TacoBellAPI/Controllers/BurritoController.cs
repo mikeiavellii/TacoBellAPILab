@@ -21,15 +21,6 @@ namespace TacoBellAPI.Controllers
             return dbContext.Burritos.Where(b => b.Bean == beans).ToList();
         }
 
-        [HttpPost("add")]
-        public Burrito AddBurrito(string name, float cost, bool bean)
-        {
-            Burrito newBurrito = new Burrito(name, cost, bean);
-            dbContext.Burritos.Add(newBurrito);
-
-            dbContext.SaveChanges();
-            return newBurrito;
-        }
 
     }
 }

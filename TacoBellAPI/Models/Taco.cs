@@ -14,12 +14,4 @@ public class Taco
     public bool SoftShell { get; set; }
 
     public bool Dorito { get; set; }
-
-    public Taco(string _name, float _cost, bool _softShell, bool _dorito)
-    {
-        Name = _name;
-        Cost = _cost;
-        SoftShell = _softShell;
-        Dorito = _dorito;
-    }
 }

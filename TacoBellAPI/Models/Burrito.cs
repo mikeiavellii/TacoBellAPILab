@@ -13,10 +13,5 @@ public class Burrito
 
     public bool Bean { get; set; }
     
-    public Burrito(string _name, float _cost, bool _bean)
-    {
-        Name= _name;
-        Cost= _cost;
-        Bean= _bean;
-    }
+
 }

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TacoBellAPI.Models;
 
 namespace TacoBellAPI.Controllers
@@ -22,14 +21,6 @@ namespace TacoBellAPI.Controllers
             return dbContext.Drinks.Where(d => d.Cost <= cost).ToList();
         }
 
-        [HttpPost]
-        public Drink AddDrink(string name, float cost, bool slushie)
-        {
-            Drink newDrink = new Drink(name, cost, slushie);
-            dbContext.Drinks.Add(newDrink);
 
-            dbContext.SaveChanges();
-            return newDrink;
-        }
     }
 }

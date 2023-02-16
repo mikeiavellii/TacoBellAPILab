@@ -28,8 +28,24 @@ namespace TacoBellAPI.Controllers
         {
             return dbContext.Tacos.FirstOrDefault(t => t.Name.ToLower().Contains(name));
         }
+        [HttpPost]
+        public Taco AddTaco(string name, float cost, bool softShell, bool Dorito)
+        {
+            Taco newTaco = new Taco()
+            {
+                Name = name,
+                Cost = cost,
+                SoftShell = softShell,
+                Dorito = Dorito
+            };
 
-        [HttpDelete]
+            dbContext.Tacos.Add(newTaco);
+            dbContext.SaveChanges();
+
+            return newTaco;
+        }
+
+            [HttpDelete]
         public Taco DeleteTaco(string name)
         {
             Taco t = dbContext.Tacos.FirstOrDefault(t => t.Name == name);
